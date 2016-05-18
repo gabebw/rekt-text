@@ -35,4 +35,13 @@ describe("Rekt", function(){
 
     expect(colors).not.to.contain("");
   });
+
+  it("changes the text rotation", function(){
+    var result = rekt.wreck();
+
+    var transform = $(result[0]).css("transform");
+    var degrees = parseInt(transform.replace(/rotate\((-?\d+)deg\)/, "$1"), 10);
+
+    expect(degrees).to.be.within(-20, 20);
+  });
 });
