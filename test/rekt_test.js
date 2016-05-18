@@ -45,4 +45,21 @@ describe("Rekt", function(){
 
     expect(degrees).to.be.within(-20, 20);
   });
+
+  describe("options", function(){
+    it("can use a custom tokenizer", function(){
+      var tokenizer = function(text){
+        return text.match(/(.{1,3})/g);
+      };
+
+      rekt = new Rekt("hello", { tokenizer: tokenizer });
+      var result = rekt.wreck();
+
+      var text = _.map(result, function(item){
+        return $(item).text();
+      });
+
+      expect(text).to.eql(["hel", "lo"]);
+    });
+  });
 });
