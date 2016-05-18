@@ -20,3 +20,9 @@ $("#output").html(wackyText.join());
 
 rekt-text depends on Underscore (version 1.5.2+) and jQuery (any reasonably recent
 version).
+
+## Testing
+
+To run the tests and see some sample output, open `test.html` in your browser.
+
+No installation needed!
