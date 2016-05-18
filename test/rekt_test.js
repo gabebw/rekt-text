@@ -5,10 +5,11 @@ describe("Rekt", function(){
     rekt = new Rekt("hello");
   });
 
-  it("returns 5 styled elements as HTML", function(){
+  it("returns each letter wrapped in a <span>", function(){
     var result = rekt.wreck();
 
-    expect(result).to.have.length(5);
+    expect(result).to.have.length("hello".length);
+    expect(result).to.be.an("array");
     expect(result[0]).to.match(/^<span/);
   });
 
