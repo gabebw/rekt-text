@@ -22,11 +22,7 @@ describe("Rekt", function(){
     });
 
     expect(_.find(fontSizes, function(fontSize){
-      return fontSize > 1;
-    })).to.be.ok();
-
-    expect(_.find(fontSizes, function(fontSize){
-      return fontSize < 1;
+      return fontSize != 1;
     })).to.be.ok();
   });
 
@@ -37,6 +33,6 @@ describe("Rekt", function(){
       return $(item).css("color");
     });
 
-    expect(colors).to.contain("red");
+    expect(colors).not.to.contain("");
   });
 });
