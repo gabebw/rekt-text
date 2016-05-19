@@ -46,6 +46,16 @@ describe("Rekt", function(){
     expect(degrees).to.be.within(-20, 20);
   });
 
+  it("changes the font family", function(){
+    var result = rekt.wreck();
+
+    var fontFamilies = _.map(result, function(item){
+      return $(item).css("font-family");
+    });
+
+    expect(fontFamilies).not.to.contain("");
+  });
+
   describe("options", function(){
     it("can use a custom tokenizer", function(){
       var tokenizer = function(text){
